@@ -209,7 +209,7 @@ restliche Bauteile und Module der Schematic Blätter 'Power Supply' und 'HB-UNI-
 * 1x PNP Transistor BC327
 * 1x 270Ohm Widerstand
 * 1x 100Ohm Widerstand
-* 4x 10kOhm Widersstände
+* 2x 10kOhm Widerstände
 * 4x 47kOhm Widerstände 1% Genauigkeit
 * 1x Solarpanel 3V 100mA 70mm x 70mm [Quelle z.B.](https://www.amazon.de/DealMux-St%C3%BCcke-Solarzelle-Spielzeug-Ladeger%C3%A4t/dp/B085NNXF5J)
 * 1x Mikroschalter 6x6mm mit Rastung [Quelle z.B.](https://www.amazon.de/POPESQ%C2%AE-Schalter-Switch-Latching-Mikroschalter/dp/B00XA3RDQI)

@@ -22,6 +22,8 @@
 // define this to read the device id, serial and device type from bootloader section
 // #define USE_OTA_BOOTLOADER
 #define ADS1115
+#define SOLAR_CHARGE
+
 
 #define EI_NOTEXTERNAL
 #include <EnableInterrupt.h>
@@ -45,7 +47,7 @@
 #include "Cfg/Device_SCD30.h"
 
 #define PARAMETER_ALTITUDE_ABOVE_SEALEVEL     83      // height of SCD30 sensor's location above sea level NN
-#define PARAMETER_AMBIENT_PRESSURE          1008      // ambient air pressure for the SCD30's internal compensation
+#define PARAMETER_AMBIENT_PRESSURE          1013      // ambient air pressure for the SCD30's internal compensation
 #define PARAMETER_UPDATE_CYCLE               240      // update interval of Asksinpp HB-UNI-Sensor1-CO2_SCD30 sensor
 
 
@@ -56,10 +58,10 @@
 
 //Korrektur von Temperatur und Luftfeuchte
 //Einstellbarer OFFSET für Temperatur -> gemessene Temp +Offset = Angezeigte Temperatur; WICHTIG: Nur positive Offsets sind erlaubt und sinvoll !!, Skalierung x10
-#define OFFSETtemp +9 //z.B 50 ≙ +5°C, Offset bitte an Deinen SCD30 Sensor anpassen
+#define OFFSETtemp +12 //z.B 50 ≙ +5°C, Offset bitte an Deinen SCD30 Sensor anpassen
 
 //Einstellbarer OFFSET für Luftfeuchte -> gemessene Luftf. +/- Offset = Angezeigte Luftf.
-#define OFFSEThumi +0   //z.B -10 ≙ -10%RF / 10 ≙ +10%RF, Offset bitte an Deinen Sensor anpassen
+#define OFFSEThumi +4   //z.B -10 ≙ -10%RF / 10 ≙ +10%RF, Offset bitte an Deinen Sensor anpassen
 
 //-----------------------------------------------------------------------------------------
 
@@ -74,9 +76,17 @@ using namespace as;
                                                           // 3.509 / 3.486 is the voltage divider correction factor for ADCO0 based on a multimeter comparison
    const float ADC1_FACTOR = 2 * 0.0625 * 2.582 / 2.560 * 0.9958; // 2 is the uncorrected volate divider ratio; 0.0625 is the ADS115 ADC resolution for the selected gain of TWO
                                                           // 2.582 / 2.560 is the voltage divider correction factor for ADC1 based on a multimeter comparison
-   #define LOWBAT_2x_NiMH_BATTERIES  2100  // mV; low bat threshold for NiMH battery = 1050 mV
+   #define LOWBAT_2x_NiMH_BATTERIES  2200  // mV; low bat threshold for NiMH battery = 1100 mV
 #endif
+  
+#ifdef SOLAR_CHARGE
+  #define UPPER_THRESHOLD_NiMH_VOLTAGE                  2950  // mV; charge up to this upper threshold by solar
+  #define VCC_THRESHOLD_VOLTAGE_INDICATING_SOLAR_POWER  3840  // mV; minimum VCC to activate solar charging
+  #define SOLAR_CHARGE_ACTIVATION_PIN 6                       // controls external PNP transistor to charge the accumulator battery by solar power
+  #define PNP_SOLAR_CHARGER_OFF  HIGH                         // SOLAR_CHARGE_ACTIVATION_PIN high level
+  #define PNP_SOLAR_CHARGER_ON   LOW                          // SOLAR_CHARGE_ACTIVATION_PIN low level
 
+#endif
 
 #ifdef SENSOR_SCD30
 #include "Sensors/Sens_SCD30.h"    // HB-UNI-Sensor1 custom sensor class
@@ -140,6 +150,12 @@ public:
         ads.setGain(GAIN_TWO);        // 2x gain   +/- 2.048V  1 bit = 1mV      0.0625mV
         ads.begin();
 #endif
+
+#ifdef SOLAR_CHARGE
+  pinMode(SOLAR_CHARGE_ACTIVATION_PIN, OUTPUT);
+  digitalWrite(SOLAR_CHARGE_ACTIVATION_PIN, LOW);
+#endif
+
     }
 
     bool runready() { return CLOCK.runready() || BaseHal::runready(); }
@@ -349,7 +365,12 @@ public:
         humidity         = scd30.humidity();
 #endif
 #ifdef ADS1115
+  #ifdef SOLAR_CHARGE
+        digitalWrite(SOLAR_CHARGE_ACTIVATION_PIN, PNP_SOLAR_CHARGER_OFF); // deactivate solar charging for voltage measurement
+        delayMicroseconds(30000);                                         // wait for 30 ms until VCC voltage has settled, 470 uF need to be charged by the solar step-up charger
+  #endif
        adc0_VCC  = ads.readADC_SingleEnded(0);
+       //delayMicroseconds(100);
        adc1_VBat = ads.readADC_SingleEnded(1);
        //adc2 = ads.readADC_SingleEnded(2);
        //adc3 = ads.readADC_SingleEnded(3);
@@ -365,8 +386,26 @@ public:
        VCCVoltage1000     = (uint16_t)adc0_VCC_f;    //captured by HW ADC ADS1115    
 #endif
        DPRINT(F("VCC(MCU ADC): "));
+       device().battery().update();
        DDECLN(device().battery().current());
        operatingVoltage1000 = device().battery().current();    // BatteryTM class, mV resolution
+
+#ifdef SOLAR_CHARGE
+  if ( VCCVoltage1000 > VCC_THRESHOLD_VOLTAGE_INDICATING_SOLAR_POWER ) {
+    if ( batteryVoltage1000 < UPPER_THRESHOLD_NiMH_VOLTAGE ) {
+      digitalWrite(SOLAR_CHARGE_ACTIVATION_PIN, PNP_SOLAR_CHARGER_ON); // ACTIVATE SOLAR CHARGING
+    }
+    else
+    {
+      digitalWrite(SOLAR_CHARGE_ACTIVATION_PIN, PNP_SOLAR_CHARGER_OFF); // DEACTIVATE SOLAR CHARGING
+    }
+  }
+  else
+  {
+    digitalWrite(SOLAR_CHARGE_ACTIVATION_PIN, PNP_SOLAR_CHARGER_OFF); // DEACTIVATE SOLAR CHARGING
+  }
+#endif
+
     }
 
     void initSensors()

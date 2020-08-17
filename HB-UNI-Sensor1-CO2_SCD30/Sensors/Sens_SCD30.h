@@ -74,15 +74,15 @@ public:
           DPRINTLN(F("SCD30 found"));
           _present = true;
       
-          airSensor.setMeasurementInterval(update_intervall/4); // Change number of seconds between measurements: 2 to 1800 (30 minutes)
-                                                                // update_intervall = 240 sec; SCD30 measurement intervall: 60 sec to allow SCD30 internal
-                                                                // hardware oversampling
+          airSensor.setMeasurementInterval(update_intervall/4);   // Change number of seconds between measurements: 2 to 1800 (30 minutes)
+                                                                  // update_intervall = 240 sec; SCD30 measurement intervall: 60 sec to allow SCD30 internal
+                                                                  // hardware oversampling
 
-          airSensor.setAltitudeCompensation(height);            // Set altitude of the sensor in m
+          airSensor.setAltitudeCompensation(height);              // Set altitude of the sensor in m
        
-          airSensor.setAmbientPressure(ambient_pressure);       // Current ambient pressure in mBar: 700 to 1200
+          airSensor.setAmbientPressure(ambient_pressure);         // Current ambient pressure in mBar: 700 to 1200
           
-          airSensor.setAutoSelfCalibration(true);               // enable autocalibration
+          airSensor.setAutoSelfCalibration(true);                 // enable autocalibration
           
           float offset = airSensor.getTemperatureOffset();
           DPRINT("Current temp offset: ");

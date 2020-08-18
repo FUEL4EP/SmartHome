@@ -6,9 +6,9 @@ Dieses Werk ist lizenziert unter einer [Creative Commons Namensnennung - Nicht-k
 
 ## HB-UNI-Sensor1-CO2_SCD30
 
-HB-UNI-Sensor1-CO2_SCD3 ist ein auf nichtdispersiver Infrarotsensormessung (NDIR) basierendes CO2 Messgerät mit einem Sensirion SCD30 CO2 and RH/T Sensor Module.
+HB-UNI-Sensor1-CO2_SCD3 ist ein auf nichtdispersiver Infrarotsensormessung (NDIR) basierendes CO2 Messgerät mit einem Sensirion SCD30 CO2 und RH/T Sensor Modul.
 
-Die CO2 Konzentration ist ein wichtiger Indikator für die Luftqualität in Innenräumene. Hier eine Übersicht auf die uswirkungen von CO2 auf unsere Gesundheit:
+Die CO2 Konzentration ist ein wichtiger Indikator für die Luftqualität in Innenräume. Hier eine Übersicht auf die Auswirkungen von CO2 auf unsere Gesundheit:
 
 [Auswirkung hoher CO2 Konzentrationen](https://www.cik-solutions.com/content/images/co2-konzentration.png)
 
@@ -68,11 +68,11 @@ Der starke Spannungseinbruch am 11. August ist auf ein kurzfristiges Herausnehme
 
 ### Autokalibrierung des Sensirion SCD30 CO2 Sensors
 
-Der bereitgestellte Sketch schaltet die Autokalibrierung des SCD30 CO2 Sensors ein. Siehe details im Datenblatt:
+Der bereitgestellte Sketch schaltet die Autokalibrierung des SCD30 CO2 Sensors ein. Siehe Details im Datenblatt:
 
 **When  activated for the first time a period of minimum 7 days is needed so that the algorithm can find its initial parameter set for ASC. The sensor has to be exposed to fresh air for at least 1 hour every day.**
 
-Das tägliche Querlüften z.B. am Morgen für mindestens 15..30 Minuten sollte dafür ausreichen (bitte während des Querlüftens CO2 Messwert prüfen und eigenen Erfahrungen sammeln, ein Kippen von Fenstern reicht in der Regel **nicht** aus!). Bis zur erfolgreichen Autokalibrierung können auch saturierte Messwerte von 380 ppm CO2 auftreten. Der CO2 Wert ist im Coronazeitalter auch ein guter Indikator, ob Aerosole ausreichend rausgelüftet werden.
+Das tägliche Querlüften z.B. am Morgen für mindestens 15..30 Minuten sollte dafür ausreichen (bitte während des Querlüftens CO2 Messwert prüfen und eigenen Erfahrungen sammeln, ein Kippen von Fenstern reicht in der Regel **nicht** aus!). Bis zur erfolgreichen Autokalibrierung können auch saturierte Messwerte von 380 ppm CO2 auftreten. Der CO2 Wert ist im Coronazeitalter auch ein guter Indikator, ob Aerosole ausreichend raus gelüftet werden.
 
 Nach der Entnahme der Akkus ist in der Regel eine erneute Autokalibrierung vonnöten !<br />
 
@@ -166,7 +166,7 @@ Die verwendete Basisplatine ist z.B. beim Smartkram Onlineshop käuflich erwerbb
 Siehe schwarzer Strich oben rechts: **Hier Leiterbahn durchtrennen**. Damit sind die beiden Akkumulatoren von der VCC Versorgungsspannung getrennt.
 Für die Durchführung der gelben Ladeleitung vom Akkulademodul ist ein geeignetes Loch ganz oben rechts zu bohren (siehe auch Aufbaubilder).<br />
 
-### Einstellung der Spannungsen der Step-Up und Step-Down Wandler
+### Einstellung der Spannungen der Step-Up und Step-Down Wandler
 
 Die Spannungen der Step-Up und Step-Down Wandler müssen **unbedingt** im Leerlauf ohne angeschlossene andere Schaltkreise an den jeweiligen Potentiometern eingestellt werden. Sonst droht die Zerstörung der anderen Bauteile aufgrund von Überspannung! Die Wandler, die in das Gehäuseoberteil eingeklebt werden, müssen bei abgezogenem Arduino Common Sensor Stecker eingestellt werden (elektrische Trennung von Ober- und Unterteil des Gehäuses). Für die Feinjustage kann die Verbindung wieder hergestellt werden. Der Akku-Step-Up Wandler muss auch im Leerlauf ohne angeschlossene Last zuerst eingestellt werden, d.h. die Verbindung der Schottkydiode auf VCC wird erst **nach** der initialen Einstellung hergestellt.
 
@@ -300,7 +300,7 @@ Ich mach gerne einen Pull request, wenn Tom einverstanden ist.
 
 ### Wichtige Hinweise, unbedingt beachten !!
 
-*  Vor dem Programmieren mit einem ISP Programmer oder Anschliessen eines FTDI Adapter USB zu TTL Serial für 3,3V und 5V für Arduino sind die Akkus aus den Halterungen zu entnehmen. Sonst entsteht ein hoher Strom Akku => Step-Up Wandler => 3.5 Versorgung ISP Programmer / FTDI Adapter. Sonst sind die Akkus sehr schnell tiefentladen !!!!
+*  Vor dem Programmieren mit einem ISP Programmer oder Anschliessen eines FTDI Adapter USB zu TTL Serial für 3,3V und 5V für Arduino sind die Akkus aus den Halterungen zu entnehmen. Sonst entsteht ein hoher Strom Akku => Step-Up Wandler => 3.5 Versorgung ISP Programmer / FTDI Adapter. Sonst sind die Akkus sehr schnell tief entladen !!!!
 * Für die Verwendung des Akku-Step-Up Wandlers muss **vor** dem Auflöten der Batteriehalterungen mit einer scharfen Klinge die VCC Leiterbahn der Basisplatine aufgetrennt werden.
 * Die Spannungen der Step-Up und Step-Down Wandler müssen **unbedingt** im Leerlauf ohne angeschlossene andere Schaltkreise an den jeweiligen Potentiometern eingestellt werden. Sonst droht die Zerstörung der anderen Bauteile aufgrund von Überspannung! Die Wandler, die in das Gehäuseoberteil eingeklebt werden, müssen bei abgezogenem Arduino Common Sensor Stecker eingestellt werden (elektrische Trennung von Ober- und Unterteil des Gehäuses). Für die Feinjustage kann die Verbindung wieder hergestellt werden. Der Akku-Step-Up Wandler muss auch im Leerlauf ohne angeschlossene Last zuerst eingestellt werden, d.h. die Verbindung der Schottkydiode auf VCC wird erst **nach** der initialen Einstellung hergestellt.
 * Die korrekte Polarität der DC Spannungsversorgungsbuchse muss vor dem Anschluss von Wandlern oder Lademodulen geprüft werden. Das vorgeschlagene Netzteil erlaubt beide Polaritäten durch Umstecken des Adapters.

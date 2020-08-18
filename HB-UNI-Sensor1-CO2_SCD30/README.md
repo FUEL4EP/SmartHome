@@ -221,7 +221,7 @@ restliche Bauteile und Module der Schematic Blätter 'Power Supply' und 'HB-UNI-
 * 1x Mikroschalter 6x6mm mit Rastung [Quelle z.B.](https://www.amazon.de/POPESQ%C2%AE-Schalter-Switch-Latching-Mikroschalter/dp/B00XA3RDQI)
 * 1x DC Spannungsversorgungsbuchse 3.5mm*1.3 mm [Quelle z.B.](https://de.aliexpress.com/i/32729953104.html)
 * 1x Universal Netzteil weiß 3V-12V, 1000mA [Quelle z.B.](https://www.amazon.de/conecto-Universal-Netzteil-Drehschalter-energiesparend-wei%C3%9F/dp/B075QGRPD7) (einstellen auf 6V, Polarität beachten!)
-* 1x Kit Mikro-Kreuzschlitzschrauben 1000 Stück M1, M1.2, M1.4, M1.7 [Quelle z.B.] (https://www.amazon.de/Phillips-Schrauben-Selbstschneidende-Elektronische-Holzschrauben/dp/B07S4FNB5N)
+* 1x Kit Mikro-Kreuzschlitzschrauben 1000 Stück M1, M1.2, M1.4, M1.7 [Quelle z.B.](https://www.amazon.de/Phillips-Schrauben-Selbstschneidende-Elektronische-Holzschrauben/dp/B07S4FNB5N)
 
 ### Programmierung des Arduino Pro Mini
 

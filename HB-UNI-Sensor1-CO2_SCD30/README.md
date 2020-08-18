@@ -8,7 +8,7 @@ Dieses Werk ist lizenziert unter einer [Creative Commons Namensnennung - Nicht-k
 
 HB-UNI-Sensor1-CO2_SCD3 ist ein auf nichtdispersiver Infrarotsensormessung (NDIR) basierendes CO2 Messgerät mit einem Sensirion SCD30 CO2 und RH/T Sensor Modul.
 
-Die CO2 Konzentration ist ein wichtiger Indikator für die Luftqualität in Innenräume. Hier eine Übersicht auf die Auswirkungen von CO2 auf unsere Gesundheit:
+Die CO2 Konzentration ist ein wichtiger Indikator für die Luftqualität in Innenräumen. Hier eine Übersicht auf die Auswirkungen von CO2 auf unsere Gesundheit:
 
 [Auswirkung hoher CO2 Konzentrationen](https://www.cik-solutions.com/content/images/co2-konzentration.png)
 
@@ -27,7 +27,7 @@ Die unveränderten Originaldaten von HB-UNI-SEN-BAT sind verfügbar unter
 
 ### Hierarchischer Schaltplan in PDF und KiCAD Format
 
-Die Schaltpläne enthalten als Textkommentare zusätzlich Aufbauhinweise.
+Die Schaltpläne enthalten als Textkommentare zusätzliche Aufbauhinweise.
 
 [Hierarchische Schaltpläne HB-UNI-Sensor1-CO2_SCD30 3 Seiten](PCB/HB-UNI-Sensor1-CO2_SCD30_schematics_3_pages.pdf)
 

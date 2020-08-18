@@ -114,7 +114,7 @@ Für die Halterungen werden 3D Druck STL Dateien bei thingiverse.com zur Verfüg
 
 [3D Druck STL Dateien](https://www.thingiverse.com/thing:4557749)
 
-[zusammengefasstes Gehäuseoberteil ohne Klebungungen für die Halterungen](Images/Aufbau/HB-UNI-Sensor1-CO2_SCD30_Gehäuse_Oberteil.png)
+[zusammengefasstes Gehäuseoberteil ohne Klebungen für die Halterungen](Images/Aufbau/HB-UNI-Sensor1-CO2_SCD30_Gehäuse_Oberteil.png)
 
 Beim Aufkleben der Halterungen ist auf eine Trocknungszeit des Zweikompnenten Klebers (z.B. UHU plus endfest 2 Komponenten-Kleber) von mindesten 24 Stunden zu achten. Beim Aufkleben der SCD30 Halterung emfiehlt sich die Verwendung einer Halteklammer.
 

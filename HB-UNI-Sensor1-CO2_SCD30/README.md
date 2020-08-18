@@ -257,7 +257,7 @@ const float ADC0_FACTOR = 2 * 0.0625 * 3.509 / 3.486 ; // 2 is the uncorrected v
                                                           // 3.509 / 3.486 is the voltage divider correction factor for ADCO0 based on a multimeter comparison
 const float ADC1_FACTOR = 2 * 0.0625 * 2.582 / 2.560 * 0.9958; // 2 is the uncorrected volate divider ratio; 0.0625 is the ADS115 ADC resolution for the selected gain of TWO
 
-Dazu wird der Sketch 'singleended.ino von Adafruit (https://github.com/adafruit/Adafruit_ADS1X15) genommen, die Gain auf 2 gesetzt, und dann die gewandelten Spannungswerte in seriellen Monitor ausgelesen.
+Dazu wird der Sketch 'singleended.ino' von Adafruit (https://github.com/adafruit/Adafruit_ADS1X15) genommen, die Gain auf 2 gesetzt, und dann die gewandelten Spannungswerte in seriellen Monitor ausgelesen.
 Im obigen Beispiel ADC0_FACTOR ist 3.509 die mit dem Voltmeter gemessene VCC Spannung, 3.486 ist die ohne Korrektur vom ADC gewandelte Spannung.
 
 **Benötigte Arduino Libraries:**
@@ -305,5 +305,6 @@ Ich mach gerne einen Pull request, wenn Tom einverstanden ist.
 * Für die Verwendung des Akku-Step-Up Wandlers muss **vor** dem Auflöten der Batteriehalterungen mit einer scharfen Klinge die VCC Leiterbahn der Basisplatine aufgetrennt werden.
 * Die Spannungen der Step-Up und Step-Down Wandler müssen **unbedingt** im Leerlauf ohne angeschlossene andere Schaltkreise an den jeweiligen Potentiometern eingestellt werden. Sonst droht die Zerstörung der anderen Bauteile aufgrund von Überspannung! Die Wandler, die in das Gehäuseoberteil eingeklebt werden, müssen bei abgezogenem Arduino Common Sensor Stecker eingestellt werden (elektrische Trennung von Ober- und Unterteil des Gehäuses). Für die Feinjustage kann die Verbindung wieder hergestellt werden. Der Akku-Step-Up Wandler muss auch im Leerlauf ohne angeschlossene Last zuerst eingestellt werden, d.h. die Verbindung der Schottkydiode auf VCC wird erst **nach** der initialen Einstellung hergestellt.
 * Die korrekte Polarität der DC Spannungsversorgungsbuchse muss vor dem Anschluss von Wandlern oder Lademodulen geprüft werden. Das vorgeschlagene Netzteil erlaubt beide Polaritäten durch Umstecken des Adapters.
+* Zur Zeit ist das projektspezifische Addon HB-TM-Devices-AddOn nicht synchronisiert mit dem von Tom Major https://github.com/TomMajor/SmartHome/tree/master/HB-TM-Devices-AddOn. Hier müssen sich Tom und ich noch einigen, wie wir das handhaben wollen. Wer die neueste Version von Tom für andere Sensoren braucht, kann meine projektspezifische Modifikation nicht nutzen. Bitte in diesen Fall bei mir melden.
 
 

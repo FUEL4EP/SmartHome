@@ -150,6 +150,16 @@ Bei Fragen oder Problemen also bitte in den entsprechenden Threads im [HomeMatic
 -> [Projektseite HB-TM-JP-AddOn-Reduced](https://github.com/TomMajor/SmartHome/tree/master/HB-TM-JP-AddOn-Reduced)
 
 
+## HB-UNI-Sensor1-CO2_SCD30
+
+- genauer CO2 Sensor basierend auf dem Sensirion SCD CO2 Sensormodul
+- Messprinzip: Nichtdispersiver Infrarotsensor
+
+<p align="center"><img src="HB-UNI-Sensor1-CO2_SCD30/Images/Aufbau/HB-UNI-Sensor1-CO2_SCD30_Aussenansicht.png?raw=true"/></p>
+
+-> [Projektseite HB-UNI-Sensor1-CO2_SCD30](https://github.com/FUEL4EP/SmartHome/tree/HB-UNI-Sensor1-CO2_SCD30/HB-UNI-Sensor1-CO2_SCD30)
+
+
 ## Diverse Platinen
 
 - AskSin-Analyzer-XS

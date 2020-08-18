@@ -6,7 +6,7 @@ Dieses Werk ist lizenziert unter einer [Creative Commons Namensnennung - Nicht-k
 
 ## HB-UNI-Sensor1-CO2_SCD30
 
-HB-UNI-Sensor1-CO2_SCD3 ist ein auf nichtdispersiver Infrarotsensormessung (NDIR) basierendes CO2 Messgerät mit einem Sensirion SCD30 CO2 und RH/T Sensor Modul.
+HB-UNI-Sensor1-CO2_SCD30 ist ein auf nichtdispersiver Infrarotsensormessung (NDIR) basierendes CO2 Messgerät mit einem Sensirion SCD30 CO2 und RH/T Sensor Modul.
 
 Die CO2 Konzentration ist ein wichtiger Indikator für die Luftqualität in Innenräumen. Hier eine Übersicht auf die Auswirkungen von CO2 auf unsere Gesundheit:
 

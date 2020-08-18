@@ -102,6 +102,8 @@ Neben der Basisplatine von Alexander Reinert HB-UNI-SEN-BATT sind zur Stromverso
 
 Der SCD30 Sensor wird mit kleinen Schrauben auf eine Halterung geschraubt, die wiederum auf die Basisplatine HB-UNI-SEN-BATT aufgeklebt wird.
 
+**UPDATE 18.08.2020:** Für das Gehäuseoberteil wird nun eine STL und FreeCAD Datei unter Thingiverse zur Verfügung gestellt, die das Gehäuseoberteil und die Halterungen von NiMH Lademodul, Step-Up Wandler Solarlader und Step-Down Wandler bei Netzversorgung zusammenfasst, so dass sie gemeinsam als ein Teil gedruckt werden können und hier Klebungen entfallen.
+
 Die Bilder in
 
 [Bilder des Aufbaus](Images/Aufbau/)
@@ -111,6 +113,8 @@ veranschaulichen den Aufbau. **WICHTIG:** Die Basisplatine ist so auf den Gehäu
 Für die Halterungen werden 3D Druck STL Dateien bei thingiverse.com zur Verfügung gestellt:
 
 [3D Druck STL Dateien](https://www.thingiverse.com/thing:4557749)
+
+[zusammengefasstes Gehäuseoberteil ohne Klebungungen für die Halterungen](Images/Aufbau/HB-UNI-Sensor1-CO2_SCD30_Gehäuse_Oberteil.png)
 
 Beim Aufkleben der Halterungen ist auf eine Trocknungszeit des Zweikompnenten Klebers (z.B. UHU plus endfest 2 Komponenten-Kleber) von mindesten 24 Stunden zu achten. Beim Aufkleben der SCD30 Halterung emfiehlt sich die Verwendung einer Halteklammer.
 
@@ -124,6 +128,8 @@ Gehäuseunter- und -oberteil sind mit einem 3-adrigen Arduino Common Sensor Kabe
 Die Buchse ist in das Gehäuseoberteil eingeklebt. **WICHTIG:** Die 2 Leitungen (GND, VCC) des Arduino Common Sensorkabels müssen vor dem Aufkleben der SCD30 Halterung durch die seitlichen Löcher derselben durchgesteckt und auf einen der I2C Konnektoren der Basisplatine (VCC, GND) verlötet werden ! Siehe Bilder des Aufbaus.<br />
 
 ### Gehäuse
+
+Außenmaße des Sensorgehäuses sind 86 mm x 86 mm x 45 mm.
 
 Das Gehäuseunterteil ist gekauft beim Smartkram Onlineshop:
 
@@ -244,6 +250,15 @@ Spezifisch angepasst werden müssen in **HB-UNI-Sensor1-CO2_SCD30.ino**:
 //Einstellbarer OFFSET für Luftfeuchte -> gemessene Luftf. +/- Offset = Angezeigte Luftf.<br />
 \#define OFFSEThumi +4   //z.B -10 ≙ -10%RF / 10 ≙ +10%RF, Offset bitte an Deinen Sensor anpassen<br />
 
+Für die Kalibrierung der ADS1115 Spannungsteiler (VCC und Vaccumulator Spannungsmessung) werden das Spannungsteilerverhältnis aufgrund von Messungen mit einem exakten Voltmeter feinjustiert:
+
+const float ADC0_FACTOR = 2 * 0.0625 * 3.509 / 3.486 ; // 2 is the uncorrected volate divider ratio; 0.0625 is the ADS115 ADC resolution for the selected gain of TWO
+                                                          // 3.509 / 3.486 is the voltage divider correction factor for ADCO0 based on a multimeter comparison
+const float ADC1_FACTOR = 2 * 0.0625 * 2.582 / 2.560 * 0.9958; // 2 is the uncorrected volate divider ratio; 0.0625 is the ADS115 ADC resolution for the selected gain of TWO
+
+Dazu wird der Sketch 'singleended.ino von Adafruit (https://github.com/adafruit/Adafruit_ADS1X15) genommen, die Gain auf 2 gesetzt, und dann die gewandelten Spannungswerte in seriellen Monitor ausgelesen.
+Im obigen Beispiel ADC0_FACTOR ist 3.509 die mit dem Voltmeter gemessene VCC Spannung, 3.486 ist die ohne Korrektur vom ADC gewandelte Spannung.
+
 **Benötigte Arduino Libraries:**
 
 \#include <EnableInterrupt.h><br />
@@ -254,7 +269,7 @@ Spezifisch angepasst werden müssen in **HB-UNI-Sensor1-CO2_SCD30.ino**:
 \#include "Sensors/tmBattery.h"   (https://github.com/TomMajor/SmartHome/blob/master/HB-UNI-Sensor1/Arduino/Sensors/tmBattery.h)<br />
 \#include <Wire.h><br />
 \#include "SparkFun_SCD30_Arduino_Library.h" (https://github.com/sparkfun/SparkFun_SCD30_Arduino_Library)<br />
-
+\#include <Adafruit_ADS1015.h> (https://github.com/adafruit/Adafruit_ADS1X15)
 
 
 **Speicherbedarf des Sketches:**

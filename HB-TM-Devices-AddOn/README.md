@@ -16,14 +16,14 @@
 
 - 2.52 - 19.08.2020 FUEL4EP
   - Unterstützung für [HB-UNI-Sensor1-CO2_SCD30](https://github.com/FUEL4EP/SmartHome/tree/HB-UNI-Sensor1-CO2_SCD30/HB-UNI-Sensor1-CO2_SCD30)
-    Modifikationen und Ergänzungen von FUEL4EP für den neuen CO2 Sensor HB-UNI-Sensor1-CO2_SCD30.
-    Die Änderungen und Ergänzungen sind der Heizungssteuerung HB-UNI-Sensor-Heizung nachempfunden.
-    hinzugefügt: HB-TM-Devices-AddOn/CCU_RM/src/addon/firmware/rftypes/hb-uni-sensor-CO2-SCD30.xml
-    hinzugefügt: HB-TM-Devices-AddOn/CCU_RM/src/addon/install_hb-uni-sensor-CO2-SCD30
-    hinzugefügt: HB-TM-Devices-AddOn/CCU_RM/src/addon/uninstall_hb-uni-sensor-CO2-SCD30
-    hinzugefügt: HB-TM-Devices-AddOn/CCU_RM/src/addon/www/config/img/devices/50/hb-uni-sensor-CO2-SCD30_thumb.png
-    hinzugefügt: HB-TM-Devices-AddOn/CCU_RM/src/addon/www/config/img/devices/250/hb-uni-sensor-CO2-SCD30.png
-    neu erstellt: HB-TM-Devices-AddOn/CCU_RM/hb-tm-devices-addon.tgz
+  - Modifikationen und Ergänzungen von FUEL4EP für den neuen CO2 Sensor HB-UNI-Sensor1-CO2_SCD30.
+  - Die Änderungen und Ergänzungen sind der Heizungssteuerung HB-UNI-Sensor-Heizung nachempfunden.
+  - hinzugefügt: HB-TM-Devices-AddOn/CCU_RM/src/addon/firmware/rftypes/hb-uni-sensor-CO2-SCD30.xml
+  - hinzugefügt: HB-TM-Devices-AddOn/CCU_RM/src/addon/install_hb-uni-sensor-CO2-SCD30
+  - hinzugefügt: HB-TM-Devices-AddOn/CCU_RM/src/addon/uninstall_hb-uni-sensor-CO2-SCD30
+  - hinzugefügt: HB-TM-Devices-AddOn/CCU_RM/src/addon/www/config/img/devices/50/hb-uni-sensor-CO2-SCD30_thumb.png
+  - hinzugefügt: HB-TM-Devices-AddOn/CCU_RM/src/addon/www/config/img/devices/250/hb-uni-sensor-CO2-SCD30.png
+  - neu erzeugt: HB-TM-Devices-AddOn/CCU_RM/hb-tm-devices-addon.tgz
 
 - 2.51 - 01.08.2020
   - Unterstützung für [HB-UNI-Sensor2..6](https://github.com/TomMajor/SmartHome/tree/master/HB-UNI-Sensor1#benutzerspezifische-sensordaten) (Benutzerspezifische Sensordaten)

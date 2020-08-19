@@ -29,9 +29,9 @@ Die unveränderten Originaldaten von HB-UNI-SEN-BAT sind verfügbar unter
 
 Die Schaltpläne enthalten als Textkommentare zusätzliche Aufbauhinweise.
 
-[Hierarchische Schaltpläne HB-UNI-Sensor1-CO2_SCD30 3 Seiten](PCB/HB-UNI-Sensor1-CO2_SCD30_schematics_3_pages.pdf)
+[Hierarchische Schaltpläne HB-UNI-Sensor1-CO2_SCD30 3 Seiten](PCB/Files/HB-UNI-Sensor1-CO2_SCD30_schematics_3_pages.pdf)
 
-[KiCAD Schaltpläne](PCB/Modification_of_TomMajors_Smarthome/HB-UNI-Sensor1-CO2_SCD30)<br />
+[KiCAD Schaltpläne](PCB/Modification_of_Alexander_Reinerts_PCB/HB-UNI-Sensor1-CO2_SCD30/)<br />
 
 
 ### Stromversorgung des HB-UNI-Sensor1-CO2_SCD30 Sensors
@@ -181,7 +181,7 @@ Die initial einzustellenden Ausgangsspannungen sind:
 
 ### Benötigte Bauteile:
 
-[Automatisch aus Schematics erzeugte BOM Liste im CSV Format](PCB/Modification_of_TomMajors_Smarthome/HB-UNI-Sensor1-CO2_SCD30/HB-UNI-Sensor1-CO2_SCD30_BOM.csv)
+[Automatisch aus Schematics erzeugte BOM Liste im CSV Format](PCB/Modification_of_Alexander_Reinerts_PCB/HB-UNI-Sensor1-CO2_SCD30//HB-UNI-Sensor1-CO2_SCD30_BOM.csv)
 
 
 Basisplatine HB-UNI-SEN-BATT von Alexander Reinert (gibt es beim Smarthome Onlineshop als Paket zu kaufen)

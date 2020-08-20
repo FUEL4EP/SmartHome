@@ -100,7 +100,8 @@ Neben der Basisplatine von Alexander Reinert HB-UNI-SEN-BATT sind zur Stromverso
 4. Step-Up Wandler bei Akkubetrieb (Unterseite Basisplatine)
 5. Spannungsmessmodule ADC ADS1115 (Unterseite Basisplatine)
 
-Der SCD30 Sensor wird mit kleinen Schrauben auf eine Halterung geschraubt, die wiederum auf die Basisplatine HB-UNI-SEN-BATT aufgeklebt wird.
+Der SCD30 Sensor wird mit kleinen Schrauben auf die  Halterung geschraubt, die wiederum auf die Basisplatine HB-UNI-SEN-BATT aufgeklebt wird.
+Das NiMH Lademodul wird auch mit kleinen Mikroschrauben in die Halterung eingeschraubt. Auf den Chip des NiMH Lademoduls wird ein kleiner Raspberry PI Kühlkörper aufgeklebt (max. 5 mm hoch).
 
 **UPDATE 18.08.2020:** Für das Gehäuseoberteil wird nun eine STL und FreeCAD Datei unter Thingiverse zur Verfügung gestellt, die das Gehäuseoberteil und die Halterungen von NiMH Lademodul, Step-Up Wandler Solarlader und Step-Down Wandler bei Netzversorgung zusammenfasst, so dass sie gemeinsam als ein Teil gedruckt werden können und hier Klebungen entfallen.
 
@@ -231,7 +232,7 @@ Einstellung: Board: Arduino Pro Mini; Prozessor: ATmega328P 3.3V, 8MHZ. Hochlade
 Debugging wird über den seriellen Monitor mit einem FTDI Adapter USB zu TTL Serial für 3,3V und 5V für Arduino gemacht.
 **WICHTIG:**  Vor dem Programmieren mit einem ISP Programmer oder Anschliessen eines FTDI Adapter USB zu TTL Serial für 3,3V und 5V für Arduino sind die Akkus aus den Halterungen zu entnehmen. Sonst entsteht ein hoher Strom Akku => Step-Up Wandler => 3.5 Versorgung ISP Programmer / FTDI Adapter. Sonst sind die Akkus sehr schnell tiefentladen !!!!
 
-Ausgangspunkt für den Sketch war die Voarbeit von Tom Major:
+Ausgangspunkt für den Sketch war die Vorarbeit von Tom Major:
 
 [Original Sketch HB-UNI-Sensor1](https://github.com/TomMajor/SmartHome/tree/master/HB-UNI-Sensor1)<br />
 
@@ -252,7 +253,7 @@ Spezifisch angepasst werden müssen in **HB-UNI-Sensor1-CO2_SCD30.ino**:
 //Einstellbarer OFFSET für Luftfeuchte -> gemessene Luftf. +/- Offset = Angezeigte Luftf.<br />
 \#define OFFSEThumi +4   //z.B -10 ≙ -10%RF / 10 ≙ +10%RF, Offset bitte an Deinen Sensor anpassen<br />
 
-Für die Kalibrierung der ADS1115 Spannungsteiler (VCC und Vaccumulator Spannungsmessung) werden das Spannungsteilerverhältnis aufgrund von Messungen mit einem exakten Voltmeter feinjustiert:
+Für die Kalibrierung der ADS1115 Spannungsteiler (VCC und Vaccumulator Spannungsmessung) werden die Spannungsteilerverhältnisse ADC0_FACTOR und ADC1_FACTOR aufgrund von Messungen mit einem exakten Voltmeter feinjustiert:
 
 const float ADC0_FACTOR = 2 * 0.0625 * 3.509 / 3.486 ; // 2 is the uncorrected volate divider ratio; 0.0625 is the ADS115 ADC resolution for the selected gain of TWO
                                                           // 3.509 / 3.486 is the voltage divider correction factor for ADCO0 based on a multimeter comparison

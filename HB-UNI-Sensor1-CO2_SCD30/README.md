@@ -190,6 +190,7 @@ Basisplatine HB-UNI-SEN-BATT von Alexander Reinert (gibt es beim Smarthome Onlin
 
 * HB-UNI-SEN-BATT Basisplatine von Alexander Reinert (Bezugsquelle siehe oben)
 * Arduino Pro Mini 3.3V 8Mhz (The Simple)
+  oder alternativ für mehr Speicherplatz: [Pro Mini XL - v2 - ATmega 1284p](https://www.tindie.com/products/prominimicros/pro-mini-xl-v2-atmega-1284p/)
 * CC1101 Modulplatine 868MHz
 * 1x LEDs 3mm Low Current (Pin 4)
 * 1x 470Ohm Widerstände (Vorwiderstand für LED)

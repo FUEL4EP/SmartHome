@@ -17,7 +17,7 @@
 #include <Wire.h>
 #include "SparkFun_SCD30_Arduino_Library.h" //Click here to get the library: http://librarymanager/All#SparkFun_SCD30
 
-
+#define COMMAND_STOP_MEASUREMENT 0x0104 // supplemented in order to stop the measurements in case of an empty accumulator battery
 
 namespace as {
 
@@ -94,6 +94,12 @@ public:
           DPRINT((float)temperature_correction/10.0);
           DPRINTLN(" deg C");
         }
+    }
+    
+    void stop_measurements()
+    {
+        airSensor.sendCommand(COMMAND_STOP_MEASUREMENT);
+        DPRINTLN("Stop continuous measurements of SCD30");
     }
 
     void measure()

@@ -22,7 +22,7 @@ Die unveränderten Originaldaten von HB-UNI-SEN-BAT sind verfügbar unter
 
 ### Bild des fertigen Sensors HB-UNI-Sensor1-CO2_SCD30
 
-[Aussenansicht HB-UNI-Sensor1-CO2_SCD30](Images/Aufbau/HB-UNI-Sensor1-CO2_SCD30_Aussenansicht.png)<br />
+[Außenansicht HB-UNI-Sensor1-CO2_SCD30](Images/Aufbau/HB-UNI-Sensor1-CO2_SCD30_Außenansicht.png)<br />
 
 
 ### Hierarchischer Schaltplan in PDF und KiCAD Format
@@ -136,7 +136,8 @@ Das Gehäuseunterteil ist gekauft beim Smartkram Onlineshop:
 
 [Gehäuseunterteil](https://smartkram.de/produkt/sensorgehaeuse-passend-fuer-platine-von-alexander-reinert/)
 
-Wer Zeit und Lust hat, kann dafür auch eine STL dateil für einen 3D Druck entwerfen.
+**UPDATE 18.08.2020** Unter Thingiverse ist nun auch ein Gehäuseunterteil als STL Datei für einen 3D Druck zur Verfügung gestellt.
+
 Um unten auf die Basisplatine Halterungen mit Modulen aufkleben zu können, sind 4 Abstandshülsen (STL beigefügt) aufgeklebt, um den Abstand Gehäuseboden zu Basisplatine zu vergrößern (siehe Bilder des Aufbaus).
 
 Das Oberteil wird durch ein 45 mm hohes 3D gedrucktes Teil ersetzt, das mit FreeCAD entworfen wurde:

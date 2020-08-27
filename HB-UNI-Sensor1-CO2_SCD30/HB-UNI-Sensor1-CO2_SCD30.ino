@@ -161,6 +161,10 @@ public:
     bool runready() { return CLOCK.runready() || BaseHal::runready(); }
 } hal;
 
+#ifdef SENSOR_SCD30
+    Sens_SCD30 scd30;
+#endif
+
 class WeatherEventMsg : public Message {
 public:
 #ifdef ADS1115
@@ -291,9 +295,9 @@ class WeatherChannel : public Channel<Hal, List1, EmptyList, List4, PEERS_PER_CH
 #endif
 
 
-#ifdef SENSOR_SCD30
-    Sens_SCD30 scd30;
-#endif
+//#ifdef SENSOR_SCD30
+//    Sens_SCD30 scd30;
+//#endif
 
 
 public:
@@ -499,6 +503,8 @@ void loop()
         // deep discharge protection
         // if we drop below critical battery level - switch off all and sleep forever
         if (hal.battery.critical()) {
+            // stop continuous measurements of SCD30 before falling to sleep
+            scd30.stop_measurements();
             // this call will never return
             hal.activity.sleepForever(hal);
         }

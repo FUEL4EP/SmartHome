@@ -602,8 +602,6 @@ Wire Wire Line
 	2500 6700 2400 6700
 Wire Wire Line
 	2400 6700 2400 6600
-Wire Wire Line
-	1750 2250 2150 2250
 Connection ~ 2400 6600
 Wire Wire Line
 	2400 6600 2400 6500
@@ -653,9 +651,6 @@ Wire Wire Line
 	2900 2550 2900 2650
 Wire Wire Line
 	2300 1350 2300 1650
-Connection ~ 2150 2250
-Wire Wire Line
-	2150 2250 3950 2250
 Wire Wire Line
 	4200 1150 4450 1150
 Wire Wire Line
@@ -736,8 +731,6 @@ Connection ~ 4900 1150
 Connection ~ 2600 2450
 Wire Wire Line
 	2600 2450 2900 2450
-Wire Wire Line
-	1750 2450 2600 2450
 Wire Wire Line
 	2600 2100 2600 2450
 $Comp
@@ -1125,24 +1118,6 @@ Wire Wire Line
 	8350 1500 8750 1500
 Connection ~ 8350 1500
 Connection ~ 8750 1500
-$Comp
-L power:PWR_FLAG #FLG08
-U 1 1 5F680073
-P 2150 1050
-F 0 "#FLG08" H 2150 1125 50  0001 C CNN
-F 1 "PWR_FLAG" H 2150 1223 50  0000 C CNN
-F 2 "" H 2150 1050 50  0001 C CNN
-F 3 "~" H 2150 1050 50  0001 C CNN
-	1    2150 1050
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	2150 1050 2150 1150
-Wire Wire Line
-	3000 1150 2150 1150
-Connection ~ 2150 1150
-Wire Wire Line
-	2150 1150 2150 2250
 Wire Wire Line
 	3000 1350 2300 1350
 Wire Wire Line
@@ -1158,4 +1133,31 @@ Wire Wire Line
 	4050 2850 5450 2850
 Connection ~ 4050 2850
 Connection ~ 5450 2850
+Wire Wire Line
+	3000 1150 2100 1150
+$Comp
+L power:PWR_FLAG #FLG0101
+U 1 1 5F50FD78
+P 1850 1150
+F 0 "#FLG0101" H 1850 1225 50  0001 C CNN
+F 1 "PWR_FLAG" H 1850 1323 50  0000 C CNN
+F 2 "" H 1850 1150 50  0001 C CNN
+F 3 "~" H 1850 1150 50  0001 C CNN
+	1    1850 1150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1750 2450 2100 2450
+Wire Wire Line
+	1750 2250 1850 2250
+Wire Wire Line
+	2100 1150 2100 2450
+Connection ~ 2100 2450
+Wire Wire Line
+	2100 2450 2600 2450
+Wire Wire Line
+	1850 1150 1850 2250
+Connection ~ 1850 2250
+Wire Wire Line
+	1850 2250 3950 2250
 $EndSCHEMATC

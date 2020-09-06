@@ -66,7 +66,7 @@
 //---------------------------------------------------------
 // Schwellwerte für Batteriespannungsmessung
 #define BAT_VOLT_LOW        32  // 3.2V minimale Betriebsspannung des SCD30 Sensors ist 3.5V
-#define BAT_VOLT_CRITICAL   22  // 2.2V
+#define BAT_VOLT_CRITICAL   27  // 2.7V
 
 
 #endif

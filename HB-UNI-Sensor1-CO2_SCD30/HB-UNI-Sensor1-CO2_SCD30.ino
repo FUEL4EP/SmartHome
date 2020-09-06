@@ -502,12 +502,12 @@ void loop()
     if (worked == false && poll == false) {
         // deep discharge protection
         // if we drop below critical battery level - switch off all and sleep forever
-        //if (hal.battery.critical()) {
-        //    // stop continuous measurements of SCD30 before falling to sleep
-        //    scd30.stop_measurements();
-        //    // this call will never return
-        //   hal.activity.sleepForever(hal);
-        //}
+        if (hal.battery.critical()) {
+            // stop continuous measurements of SCD30 before falling to sleep
+            scd30.stop_measurements();
+            // this call will never return
+            hal.activity.sleepForever(hal);
+        }
         // if nothing to do - go sleep
         hal.activity.savePower<SAVEPWR_MODE>(hal);
         //hal.activity.savePower<Idle<>>(hal);

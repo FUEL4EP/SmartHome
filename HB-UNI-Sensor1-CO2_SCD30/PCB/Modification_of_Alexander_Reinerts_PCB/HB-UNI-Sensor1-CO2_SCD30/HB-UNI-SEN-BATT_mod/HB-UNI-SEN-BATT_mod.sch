@@ -606,23 +606,6 @@ Connection ~ 2400 6600
 Wire Wire Line
 	2400 6600 2400 6500
 $Comp
-L Device:CP C2
-U 1 1 5F3BD123
-P 8750 1100
-F 0 "C2" H 8868 1146 50  0000 L CNN
-F 1 "470u" H 8400 1100 50  0000 L CNN
-F 2 "" H 8788 950 50  0001 C CNN
-F 3 "~" H 8750 1100 50  0001 C CNN
-	1    8750 1100
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	8750 1250 8750 1500
-Wire Wire Line
-	8750 950  9100 950 
-Text Notes 8750 900  0    50   ~ 0
-C2 connected to backside of PCB at I2C JAx
-$Comp
 L HB-UNI-Sensor1-CO2_SCD30:Step_Up_MT3608 Module?
 U 1 1 5F394827
 P 3600 1250
@@ -635,28 +618,13 @@ F 3 "https://chips-and-more.com/cm/pdf/K3608.pdf" H 3600 1750 50  0001 C CNN
 	1    3600 1250
 	1    0    0    -1  
 $EndComp
-$Comp
-L Diode:1N5819 D3
-U 1 1 5F3959ED
-P 4600 1150
-F 0 "D3" H 4600 1367 50  0000 C CNN
-F 1 "1N5819" H 4600 1276 50  0000 C CNN
-F 2 "Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal" H 4600 975 50  0001 C CNN
-F 3 "http://www.vishay.com/docs/88525/1n5817.pdf" H 4600 1150 50  0001 C CNN
-	1    4600 1150
-	-1   0    0    1   
-$EndComp
 Connection ~ 2900 2550
 Wire Wire Line
 	2900 2550 2900 2650
 Wire Wire Line
 	2300 1350 2300 1650
 Wire Wire Line
-	4200 1150 4450 1150
-Wire Wire Line
-	4750 1150 4900 1150
-Wire Wire Line
-	4900 1150 4900 2250
+	4200 1150 4350 1150
 Wire Wire Line
 	4900 2250 3950 2250
 Connection ~ 3950 2250
@@ -727,7 +695,6 @@ Wire Wire Line
 Wire Wire Line
 	2900 2050 2900 2450
 Connection ~ 2900 2450
-Connection ~ 4900 1150
 Connection ~ 2600 2450
 Wire Wire Line
 	2600 2450 2900 2450
@@ -888,13 +855,9 @@ Wire Wire Line
 	8350 1600 8000 1600
 Wire Wire Line
 	8350 1700 8000 1700
-Wire Wire Line
-	9100 950  9100 1400
 Connection ~ 9100 1400
 Wire Wire Line
 	9100 1400 9450 1400
-Wire Wire Line
-	9100 1500 8750 1500
 $Comp
 L HB-UNI-SEN-BATT-rescue:Conn_01x04-conn J14
 U 1 1 5F39C0DB
@@ -1045,12 +1008,9 @@ F 3 "http://www.vishay.com/docs/88525/1n5817.pdf" H 5200 1850 50  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 Wire Wire Line
-	4900 1150 5450 1150
-Wire Wire Line
 	6050 1500 6050 1600
 Wire Wire Line
 	5450 1200 5450 1150
-Connection ~ 5450 1150
 Wire Wire Line
 	5450 1150 6050 1150
 Wire Wire Line
@@ -1114,10 +1074,7 @@ Connection ~ 10200 1500
 Wire Wire Line
 	8350 1400 9100 1400
 Connection ~ 8350 1400
-Wire Wire Line
-	8350 1500 8750 1500
 Connection ~ 8350 1500
-Connection ~ 8750 1500
 Wire Wire Line
 	3000 1350 2300 1350
 Wire Wire Line
@@ -1160,4 +1117,44 @@ Wire Wire Line
 Connection ~ 1850 2250
 Wire Wire Line
 	1850 2250 3950 2250
+Wire Wire Line
+	8350 1500 9100 1500
+$Comp
+L Device:CP C2
+U 1 1 5F56C474
+P 4350 1350
+F 0 "C2" H 4468 1396 50  0000 L CNN
+F 1 "47u" H 4468 1305 50  0000 L CNN
+F 2 "" H 4388 1200 50  0001 C CNN
+F 3 "~" H 4350 1350 50  0001 C CNN
+	1    4350 1350
+	1    0    0    -1  
+$EndComp
+Connection ~ 5450 1150
+Wire Wire Line
+	4900 1150 5450 1150
+Connection ~ 4900 1150
+Wire Wire Line
+	4900 1150 4900 2250
+$Comp
+L Diode:1N5819 D3
+U 1 1 5F3959ED
+P 4750 1150
+F 0 "D3" H 4750 1367 50  0000 C CNN
+F 1 "1N5819" H 4750 1276 50  0000 C CNN
+F 2 "Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal" H 4750 975 50  0001 C CNN
+F 3 "http://www.vishay.com/docs/88525/1n5817.pdf" H 4750 1150 50  0001 C CNN
+	1    4750 1150
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	4350 1200 4350 1150
+Connection ~ 4350 1150
+Wire Wire Line
+	4350 1150 4600 1150
+Wire Wire Line
+	4350 1500 4350 1650
+Wire Wire Line
+	4350 1650 4200 1650
+Connection ~ 4200 1650
 $EndSCHEMATC

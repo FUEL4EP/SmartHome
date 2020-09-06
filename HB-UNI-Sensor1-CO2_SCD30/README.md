@@ -227,6 +227,18 @@ restliche Bauteile und Module der Schematic Blätter 'Power Supply' und 'HB-UNI-
 * 1x Kit Mikro-Kreuzschlitzschrauben 1000 Stück M1, M1.2, M1.4, M1.7 [Quelle z.B.](https://www.amazon.de/Phillips-Schrauben-Selbstschneidende-Elektronische-Holzschrauben/dp/B07S4FNB5N)
 * 1x Arduino Common Sensor Cable-30cm [Quelle z.B.](https://www.emartee.com/product/41527/Arduino-Common-Sensor-Cable-30cm)
 
+### Reduktiuon des Ladestroms des NiMH Lademoduls NiMH_Charger_NIMHCRTA_2S
+
+Um ein Einfrieren des gesamten Sensors durch Spannungsstörungen bei Ladebeginn der NiMH Akkus zu vermeiden, muss der Ladestrom des Lademoduls "NiMH_Charger_NIMHCRTA_2S" von ca. 1 A auf 0.259 A verkleinert werden. Die Ladezeit der Akkus vergrößert sich dadurch. Dazu wird der SMD Widerstand R5 (siehe Bild, rot markiert) auf der Modulplatine von original 1.24 kOhm auf 4.7 kOhm vergrößert. Es kann auch statt des SMD Widerstands ein Metallfilmwiderstand eingelötet werden. Der positive Nebeneffekt des geringeren Ladestroms ist eine geringere Wärmeentwicklung des Lademoduls. 
+
+[Änderung von R5 Widerstands des Lademoduls NiMH_Charger_NIMHCRTA_2S](Images/Aufbau/CN3085_NIMHCRTA_charge_current.png)<br />
+
+Der Ladestrom beträgt laut
+
+[Datenblatt des Lade IC CN3085 des Lademoduls NiMH_Charger_NIMHCRTA_2S](https://datasheetspdf.com/pdf-file/1257631/CONSONANCE/CN3085/1)
+
+Icharge = 1218V／R5 [A]
+
 ### Programmierung des Arduino Pro Mini
 
 Die Programmierung erfolgt mit einem ISP Programmer, z.B. Diamex ISP USB Programmer. Dazu dienen die Signale VCC, GND, MOSI, SCK, MISO, RSET an der Steckerleiste unten rechts der Basisplatine.
@@ -310,5 +322,6 @@ Ich mach gerne einen Pull request, wenn Tom einverstanden ist.
 * Die Spannungen der Step-Up und Step-Down Wandler müssen **unbedingt** im Leerlauf ohne angeschlossene andere Schaltkreise an den jeweiligen Potentiometern eingestellt werden. Sonst droht die Zerstörung der anderen Bauteile aufgrund von Überspannung! Die Wandler, die in das Gehäuseoberteil eingeklebt werden, müssen bei abgezogenem Arduino Common Sensor Stecker eingestellt werden (elektrische Trennung von Ober- und Unterteil des Gehäuses). Für die Feinjustage kann die Verbindung wieder hergestellt werden. Der Akku-Step-Up Wandler muss auch im Leerlauf ohne angeschlossene Last zuerst eingestellt werden, d.h. die Verbindung der Schottkydiode auf VCC wird erst **nach** der initialen Einstellung hergestellt.
 * Die korrekte Polarität der DC Spannungsversorgungsbuchse muss vor dem Anschluss von Wandlern oder Lademodulen geprüft werden. Das vorgeschlagene Netzteil erlaubt beide Polaritäten durch Umstecken des Adapters.
 * Zur Zeit ist das projektspezifische Addon HB-TM-Devices-AddOn nicht synchronisiert mit dem von Tom Major https://github.com/TomMajor/SmartHome/tree/master/HB-TM-Devices-AddOn. Hier müssen sich Tom und ich noch einigen, wie wir das handhaben wollen. Wer die neueste Version von Tom für andere Sensoren braucht, kann meine projektspezifische Modifikation nicht nutzen. Bitte in diesen Fall bei mir melden.
+* Der Ladestrom des NiMH Lademoduls NIMHCRTA 2S muss durch Ändern des Widerstands R5 von 1.24kOhm auf 4.7kOhm verkleinert werden. Reduzierter Ladestrom ist ungefähr 0.259A.
 
 

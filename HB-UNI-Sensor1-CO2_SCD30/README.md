@@ -229,7 +229,7 @@ restliche Bauteile und Module der Schematic Blätter 'Power Supply' und 'HB-UNI-
 
 ### Reduktiuon des Ladestroms des NiMH Lademoduls NiMH_Charger_NIMHCRTA_2S
 
-Um ein Einfrieren des gesamten Sensors durch Spannungsstörungen bei Ladebeginn der NiMH Akkus zu vermeiden, muss der Ladestrom des Lademoduls "NiMH_Charger_NIMHCRTA_2S" von ca. 1 A auf 0.259 A verkleinert werden. Die Ladezeit der Akkus vergrößert sich dadurch. Dazu wird der SMD Widerstand R5 (siehe Bild, rot markiert) auf der Modulplatine von original 1.24 kOhm auf 4.7 kOhm vergrößert. Es kann auch statt des SMD Widerstands ein Metallfilmwiderstand eingelötet werden. Der positive Nebeneffekt des geringeren Ladestroms ist eine geringere Wärmeentwicklung des Lademoduls. 
+Um ein Einfrieren des gesamten Sensors durch Spannungsstörungen bei Ladebeginn der NiMH Akkus zu vermeiden, muss der Ladestrom des Lademoduls "NiMH_Charger_NIMHCRTA_2S" von ca. 1 A auf 0.259 A verkleinert werden. Die Ladezeit der Akkus vergrößert sich dadurch auf ca. 12 Stunden. Dazu wird der SMD Widerstand R5 (siehe Bild, rot markiert) auf der Modulplatine von original 1.24 kOhm auf 4.7 kOhm vergrößert. Es kann auch statt des SMD Widerstands ein Metallfilmwiderstand eingelötet werden. Der positive Nebeneffekt des geringeren Ladestroms ist eine geringere Wärmeentwicklung des Lademoduls. 
 
 [Änderung von R5 Widerstands des Lademoduls NiMH_Charger_NIMHCRTA_2S](Images/Aufbau/CN3085_NIMHCRTA_charge_current.png)<br />
 
